@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background: #ffe6e6;
+      text-align: center;
+    }
+    h1 {
+      color: #d62828;
+      margin-bottom: 30px;
+      font-size: 32px;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 20px;
+      margin: 10px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    #yesBtn {
+      background: #ff4d4d;
+      color: white;
+    }
+    #noBtn {
+      background: #aaa;
+      color: white;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Will you be my Valentine? 💖</h1>
+
+  <button id="yesBtn">YES 💘</button>
+  <button id="noBtn">NO 😢</button>
+
+  <script>
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+
+    let scale = 1;
+
+    noBtn.addEventListener("touchstart", moveNo);
+    noBtn.addEventListener("mouseover", moveNo);
+
+    function moveNo() {
+      scale += 0.2;
+      yesBtn.style.transform = scale(${scale});
+
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 200 - 100;
+      noBtn.style.transform = translate(${x}px, ${y}px);
+    }
+
+    yesBtn.addEventListener("click", () => {
+      document.body.innerHTML = "<h1>YAYYY 💖 See you on Valentine’s Day 😘</h1>";
+    });
+  </script>
+
+</body>
+</html>
